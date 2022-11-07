@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '../ButtonElements';
 import { 
     InfoContainer, 
     InfoWrapper, 
@@ -12,7 +11,8 @@ import {
     Subtitle,
     BtnWrap, 
     ImgWrap,
-    Img
+    Img,
+    FbLink,
 } from './InfoElements';
 
 
@@ -30,7 +30,8 @@ const InfoSection = ({
     alt,
     primary,
     dark,
-    dark2
+    dark2,
+    hasLink,
 }) => {
   return (
     <>
@@ -41,7 +42,14 @@ const InfoSection = ({
                         <TextWrapper>
                             <TopLine>{topLine}</TopLine>
                             <Heading lightText={lightText}>{headline}</Heading>
-                            <Subtitle darkText={darkText}>{description}</Subtitle>
+                            <Subtitle darkText={darkText}>{description}
+                                <FbLink 
+                                href="//www.facebook.com/profile.php?id=100087214955026" 
+                                target="_blank" 
+                                aria-label="Facebook"
+                                hasLink={hasLink}
+                                >Facebook!</FbLink>
+                            </Subtitle>
                         </TextWrapper>
                     </Column1>
                     <Column2>

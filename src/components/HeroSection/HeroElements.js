@@ -44,6 +44,12 @@ export const VideoBg = styled.video`
     background: #232a34;
 `;
 
+export const ImgBg = styled.img`
+    width: 100%;
+    height: 100%;
+    background: #232a34;
+`;
+
 export const HeroContent = styled.div`
     z-index: 3;
     max-width: 1200px;

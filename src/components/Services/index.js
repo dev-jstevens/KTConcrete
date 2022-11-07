@@ -1,11 +1,12 @@
-import React from 'react';
-import Icon3 from '../../images/svg-3.svg';
-import driveway from '../../images/pexels-pixabay-259588.jpg';
-import patio from '../../images/patio.PNG';
-import sidewalk from '../../images/sidewalk.PNG';
-import slab from '../../images/slab.PNG';
-import extension from '../../images/driveway-ext.PNG';
-import seawall from '../../images/seawall.PNG';
+import React, {useState, useEffect} from 'react';
+import driveway from '../../images/driveway.JPEG';
+import patio from '../../images/patio.JPEG';
+import sidewalk from '../../images/sidewalk.JPEG';
+import slab from '../../images/slab.JPEG';
+import extension from '../../images/driveway-ext.JPEG';
+import seawall from '../../images/seawall.JPEG';
+import { sliderConfig } from '../Slider/Data.js';
+import Slider from '../Slider/index.js';
 
 import {
     ServicesContainer,
@@ -14,47 +15,54 @@ import {
     ServicesCard,
     ServicesIcon,
     ServicesH2,
-    ServicesP
+    ServicesP,
 } from './ServicesElements';
 
-const Services = () => {
+const Services = ({isDesktop}) => {
+
+  const UseCards = function () {
+    return (
+      <ServicesWrapper>
+        <ServicesCard>
+          <ServicesIcon src={driveway}/>
+          <ServicesH2>Driveways</ServicesH2>
+        </ServicesCard>
+        <ServicesCard>
+          <ServicesIcon src={patio}/>
+          <ServicesH2>Patios</ServicesH2>
+        </ServicesCard>
+        <ServicesCard>
+          <ServicesIcon src={sidewalk}/>
+          <ServicesH2>Sidewalks</ServicesH2>
+        </ServicesCard>
+        <ServicesCard>
+          <ServicesIcon src={slab}/>
+          <ServicesH2>Slabs</ServicesH2>
+        </ServicesCard>
+        <ServicesCard>
+          <ServicesIcon src={extension}/>
+          <ServicesH2>Driveway Extensions</ServicesH2>
+        </ServicesCard>
+        <ServicesCard>
+          <ServicesIcon src={seawall}/>
+          <ServicesH2>Seawalls</ServicesH2>
+        </ServicesCard>
+      </ServicesWrapper>
+    );
+  };
+
+  const UseSlider = function () {
+    return <Slider config={sliderConfig} />;
+  };
+
+  console.log(`Is desktop services ${isDesktop}`);
+
   return (
     <ServicesContainer id="services">
         <ServicesH1>Our Services</ServicesH1>
-        <ServicesWrapper>
-            <ServicesCard>
-                <ServicesIcon src={driveway}/>
-                <ServicesH2>Driveways</ServicesH2>
-                <ServicesP>We help reduce your fees and increase your overall revenue.</ServicesP>
-            </ServicesCard>
-            <ServicesCard>
-                <ServicesIcon src={patio}/>
-                <ServicesH2>Patios</ServicesH2>
-                <ServicesP>You can access our platform online anywhere in the world.</ServicesP>
-            </ServicesCard>
-            <ServicesCard>
-                <ServicesIcon src={sidewalk}/>
-                <ServicesH2>Sidewalks</ServicesH2>
-                <ServicesP>Unlock our special membership card that returns 5% cash back.</ServicesP>
-            </ServicesCard>
-            <ServicesCard>
-                <ServicesIcon src={slab}/>
-                <ServicesH2>Slabs</ServicesH2>
-                <ServicesP>Unlock our special membership card that returns 5% cash back.</ServicesP>
-            </ServicesCard>
-            <ServicesCard>
-                <ServicesIcon src={extension}/>
-                <ServicesH2>Driveway Extensions</ServicesH2>
-                <ServicesP>Unlock our special membership card that returns 5% cash back.</ServicesP>
-            </ServicesCard>
-            <ServicesCard>
-                <ServicesIcon src={seawall}/>
-                <ServicesH2>Seawalls</ServicesH2>
-                <ServicesP>Unlock our special membership card that returns 5% cash back.</ServicesP>
-            </ServicesCard>
-        </ServicesWrapper>
+        {isDesktop ? (<UseSlider />) : (<UseCards />)}
     </ServicesContainer>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;

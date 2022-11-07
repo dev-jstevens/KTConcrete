@@ -80,6 +80,14 @@ export const Subtitle = styled.p`
     color: ${({darkText}) => (darkText ? '#010606' : '#fff')};
 `;
 
+export const FbLink = styled.a`
+    font-size: 18px;
+    margin: 0px;
+    padding: 0px;
+    color: blue;
+    visibility: ${({hasLink}) => (hasLink ? 'visibile' : 'hidden')};
+`;
+
 export const BtnWrap = styled.div`
     display: flex;
     justify-content: flex-start;

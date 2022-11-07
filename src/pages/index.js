@@ -1,8 +1,8 @@
-import React , {useState} from 'react';
+import React , {useState, useEffect} from 'react';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import InfoSection from '../components/InfoSection';
-import { homeObjOne, homeObjTwo, homeObjThree } from '../components/InfoSection/Data';
+import { homeObjOne, homeObjTwo} from '../components/InfoSection/Data';
 import Navbar from '../components/Navbar';
 import Services from '../components/Services';
 import Sidebar from '../components/Sidebar';
@@ -15,6 +15,19 @@ const Home = () => {
     setIsOpen(!isOpen);
   }
 
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 768);
+
+  const updateMedia = () => {
+    setDesktop(window.innerWidth > 768);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  });
+
+  console.log(`Is desktop ${isDesktop}`);
+
   return (
     <>
       <ScrollToTop />
@@ -22,8 +35,8 @@ const Home = () => {
       <Navbar toggle={toggle} />
       <HeroSection />
       <InfoSection {...homeObjOne}/>
-      <Services />
-      <InfoSection {...homeObjThree}/>
+      <Services isDesktop = {isDesktop}/>
+      <InfoSection {...homeObjTwo}/>
       <Footer />
     </>
   );
