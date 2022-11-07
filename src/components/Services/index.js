@@ -1,13 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import driveway from '../../images/driveway.JPEG';
-import patio from '../../images/patio.JPEG';
-import sidewalk from '../../images/sidewalk.JPEG';
-import slab from '../../images/slab.JPEG';
-import extension from '../../images/driveway-ext.JPEG';
-import seawall from '../../images/seawall.JPEG';
+import React from 'react';
 import { sliderConfig } from '../Slider/Data.js';
 import Slider from '../Slider/index.js';
-
 import {
     ServicesContainer,
     ServicesH1,
@@ -19,6 +12,12 @@ import {
 } from './ServicesElements';
 
 const Services = ({isDesktop}) => {
+  const driveway = `https://res.cloudinary.com/dqnjw6dip/image/fetch/https://res.cloudinary.com/dqnjw6dip/image/upload/v1667854923/KTC-Images/driveway_f7iiuf.jpg`;
+  const patio = `https://res.cloudinary.com/dqnjw6dip/image/fetch/https://res.cloudinary.com/dqnjw6dip/image/upload/v1667854929/KTC-Images/patio_kotkwl.jpg`;
+  const sidewalk = `https://res.cloudinary.com/dqnjw6dip/image/fetch/https://res.cloudinary.com/dqnjw6dip/image/upload/v1667854931/KTC-Images/sidewalk_ivbsh1.jpg`;
+  const slab = `https://res.cloudinary.com/dqnjw6dip/image/fetch/https://res.cloudinary.com/dqnjw6dip/image/upload/v1667854933/KTC-Images/slab_n4vxom.jpg`;
+  const extension = `https://res.cloudinary.com/dqnjw6dip/image/fetch/https://res.cloudinary.com/dqnjw6dip/image/upload/v1667854924/KTC-Images/driveway-ext_pjwytm.jpg`;
+  const seawall = `https://res.cloudinary.com/dqnjw6dip/image/fetch/https://res.cloudinary.com/dqnjw6dip/image/upload/v1667854931/KTC-Images/seawall_cyiziq.jpg`;
 
   const UseCards = function () {
     return (
@@ -54,8 +53,6 @@ const Services = ({isDesktop}) => {
   const UseSlider = function () {
     return <Slider config={sliderConfig} />;
   };
-
-  console.log(`Is desktop services ${isDesktop}`);
 
   return (
     <ServicesContainer id="services">

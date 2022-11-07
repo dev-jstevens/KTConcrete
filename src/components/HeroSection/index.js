@@ -1,6 +1,4 @@
-import React, {useState} from 'react';
-import video from '../../videos/05_beton_13_upload.mp4';
-import heroImg from '../../images/Hero IMG Cement Being Smoothed.jpeg';
+import React from 'react';
 import { Button } from '../ButtonElements';
 import {
     HeroContainer,
@@ -16,7 +14,8 @@ import {
 } from './HeroElements';
 
 const HeroSection = () => {
-
+  const video = `https://res.cloudinary.com/dqnjw6dip/video/upload/v1667854865/KTC-Videos/05_beton_13_upload_m9cw8y.mp4`;
+  const heroImg = `https://res.cloudinary.com/dqnjw6dip/image/fetch/https://res.cloudinary.com/dqnjw6dip/image/upload/v1667854941/KTC-Images/Hero_IMG_Cement_Being_Smoothed_pnllm9.jpg`;
   // This is for the 'Contact Us' button animation, but it causes a re-render when used,
   // so it causes a bug with setting the Hero section background. If you want to use it,
   // uncomment the two lines below and paste them into the Button component:

@@ -1,5 +1,5 @@
-import osceola from '../../images/osceola.PNG'
-import finishedProject from '../../images/Geneva Driveway Finished.jpg';
+const osceola = `https://res.cloudinary.com/dqnjw6dip/image/fetch/https://res.cloudinary.com/dqnjw6dip/image/upload/v1667854924/KTC-Images/osceola_sut5jr.png`;
+const finishedProject = `https://res.cloudinary.com/dqnjw6dip/image/fetch/https://res.cloudinary.com/dqnjw6dip/image/upload/v1667854945/KTC-Images/Geneva_Driveway_Finished_yvvbbk.jpg`;
 
 export const homeObjOne = {
     id: 'about',

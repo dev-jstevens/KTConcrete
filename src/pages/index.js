@@ -26,8 +26,6 @@ const Home = () => {
     return () => window.removeEventListener("resize", updateMedia);
   });
 
-  console.log(`Is desktop ${isDesktop}`);
-
   return (
     <>
       <ScrollToTop />
