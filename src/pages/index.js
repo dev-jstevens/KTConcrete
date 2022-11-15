@@ -31,7 +31,7 @@ const Home = () => {
       <ScrollToTop />
       <Sidebar  isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
-      <HeroSection />
+      <HeroSection isDesktop = {isDesktop}/>
       <InfoSection {...homeObjOne}/>
       <Services isDesktop = {isDesktop}/>
       <InfoSection {...homeObjTwo}/>

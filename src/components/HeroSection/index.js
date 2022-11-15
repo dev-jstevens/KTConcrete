@@ -13,7 +13,7 @@ import {
     ArrowRight
 } from './HeroElements';
 
-const HeroSection = () => {
+const HeroSection = ({isDesktop}) => {
   const video = `https://res.cloudinary.com/dqnjw6dip/video/upload/v1667854865/KTC-Videos/05_beton_13_upload_m9cw8y.mp4`;
   const heroImg = `https://res.cloudinary.com/dqnjw6dip/image/fetch/https://res.cloudinary.com/dqnjw6dip/image/upload/v1667854941/KTC-Images/Hero_IMG_Cement_Being_Smoothed_pnllm9.jpg`;
   // This is for the 'Contact Us' button animation, but it causes a re-render when used,
@@ -33,24 +33,28 @@ const HeroSection = () => {
   // the button aninamtion. Alternatively, if you want to conditionally render, re-factor the logic
   // to decouple the animation effect from it.
 
-  function UseVideoBG (props) {
+  function UseVideoBG () {
     return <VideoBg autoPlay loop muted src={video} type='video/mp4' />;
   }
 
-  function UseImageBG (props) {
+  function UseImageBG () {
     return <ImgBg src={heroImg} />;
   }
 
-  function HeroBackground (props) {
+  function HeroBackground () {
+    if (!isDesktop) {
+      return <UseImageBG />;
+    }
+
     if (navigator.connection && !!navigator.connection.effectiveType) {
-        if (navigator.connection.effectiveType === '4g') {
-            return <UseVideoBG />;
-        } else {
-          return <UseImageBG />;
-        }
-      } else {
+      if (navigator.connection.effectiveType === '4g') {
         return <UseVideoBG />;
+      } else {
+        return <UseImageBG />;
       }
+    } else {
+      return <UseVideoBG />;
+    }
   }
 
   return (
@@ -61,7 +65,7 @@ const HeroSection = () => {
         <HeroContent>
             <HeroH1>Karen Thompson Concrete, LLC</HeroH1>
             <HeroP>
-                Give us a call to get an estimate and schedule your next project.
+                Give us a call to get a free estimate and schedule your next project.
             </HeroP>
             <HeroBtnWrapper>
                 <Button to="contact"

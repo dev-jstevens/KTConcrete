@@ -26,7 +26,7 @@ export const homeObjTwo = {
     lightTextDesc: false,
     topLine: 'Give Us a Call',
     headline: '(407)-301-5947',
-    description: "Thinking of starting a new project? Give us a call to get an estimate.",
+    description: "Thinking of starting a new project? Give us a call to get a free estimate.",
     buttonLabel: 'Start Now',
     imgStart: false,
     img: finishedProject,
